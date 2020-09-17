@@ -35,3 +35,5 @@ The effect of the keyword volatile is that it makes sure the variable is stored 
 + It may be advantageous to put the operand that is most often true last in an && expression, or first in an || expression
 
 + A multidimensional array should be organized so that the last index changes fastest. This makes sure that the elements are accessed sequentially. The opposite order of the two loops would make the access non-sequential which makes the data caching less efficient.
+
++ A function that is used only within the same module (i.e. the current .cpp file) should be made local. This makes it easier for the compiler to inline the function and to optimize across function calls
