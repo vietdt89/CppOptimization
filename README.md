@@ -57,4 +57,19 @@ The effect of the keyword volatile is that it makes sure the variable is stored 
 + Using a union is not a safe programming practice, of course, because you will get no warning from the compiler if the uses of a and b overlap. You should use this method only
 for big objects that take a lot of cache space. Putting simple variables into a union is not optimal because it prevents the use of register variables
 
++ The time it takes to call a virtual member function is a few clock cycles more than it takes to call a non-virtual member function, provided that the function call statement always calls the same version of the virtual function
 
++ Integer multiplication takes longer time than addition and subtraction (3 - 10 clock cycles, depending on the processor). Optimizing compilers will often replace integer multiplication by a constant with a combination of additions and shift operations
+
++ Integer division takes much longer time than addition, subtraction and multiplication (27 - 80 clock cycles for 32-bit integers, depending on the processor).
++ Integer division by a power of 2 can be done with a shift operation, which is much faster 
++ The following guidelines can be used for improving code that contains integer division:
+  • Integer division by a constant is faster than division by a variable. Make sure the
+value of the divisor is known at compile time.
+  • Integer division by a constant is faster if the constant is a power of 2
+  • Integer division by a constant is faster if the dividend is unsigned
+
++ Floating point division takes much longer time than addition, subtraction and multiplication
+(20 - 45 clock cycles).
++ Floating point division by a constant should be done by multiplying with the reciprocal
++ Conversions from double <-> float take a lot of time
