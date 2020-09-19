@@ -54,3 +54,7 @@ The effect of the keyword volatile is that it makes sure the variable is stored 
    - The cost of sync and communicating between threads. A shared variable must be declared volatile
    - No function or class using multiple threads shoud rely on static or globle variables
 
++ Using a union is not a safe programming practice, of course, because you will get no warning from the compiler if the uses of a and b overlap. You should use this method only
+for big objects that take a lot of cache space. Putting simple variables into a union is not optimal because it prevents the use of register variables
+
+
