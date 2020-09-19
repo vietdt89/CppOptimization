@@ -36,4 +36,21 @@ The effect of the keyword volatile is that it makes sure the variable is stored 
 
 + A multidimensional array should be organized so that the last index changes fastest. This makes sure that the elements are accessed sequentially. The opposite order of the two loops would make the access non-sequential which makes the data caching less efficient.
 
-+ A function that is used only within the same module (i.e. the current .cpp file) should be made local. This makes it easier for the compiler to inline the function and to optimize across function calls
++ Static function:
+   - By declaring a function member as static, you make it independent of any particular object of the class.
+   - A static member function can be called even if no objects of the class exist and the static functions are accessed using only the class name and the scope resolution operator ::.
+   - A static member function can only access static data member, other static member functions and any other functions from outside the class.
+   - Static member functions have a class scope and they do not have access to the this pointer of the class. You could use a static member function to determine whether some objects of the class have been created or not.
+   - The preferred method for transferring composite objects to a function is by a const reference. A const reference makes sure that the original object is not modified
+   - A static member function cannot access any non-static data members or non-static member functions. A static member function is faster than a non-static member function because it does not need the 'this' pointer
+
++ A copy constructor may be called whenever an object is copied by assignment, as afunction parameter, or as a function return value. The copy constructor can be a time consumer if it involves allocation of memory or other resources -> Use a reference or pointer to the object instead of copying it
+   
++ A template class can be used for implementing a compile-time polymorphism, which is more efficient than the runtime polymorphism that is obtained with virtual member functions
+
++ The cost of thread:
+   - The cost of start and stop thread. Do not put a task into a separate thread if it is short in duration compared with the time it takes to start and stop the thread
+   - The cost of task switching. This cost is minimized if the number of threads with the same priority is no more than the number of CPU cores.
+   - The cost of sync and communicating between threads. A shared variable must be declared volatile
+   - No function or class using multiple threads shoud rely on static or globle variables
+
