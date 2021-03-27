@@ -8,7 +8,8 @@ starts
   }
   ```
   
-  The advantage of this is that the list does not need to be initialized every time the function is called. The static declaration helps the compiler decide that the          table can be reused from one call to the next. The const declaration helps the compiler see that the table never changes
+  The advantage of this is that the list does not need to be initialized every time the function is called. The static declaration helps the compiler decide that the          table can be reused from one call to the next. 
+  static means variable has to be init first time but not on subsequent calls, so function needs extra overhead to check if variable is called first time or not. So adding const helps compiler see the variable never changes
   
 + Volatile keyword: 
   ```C++
