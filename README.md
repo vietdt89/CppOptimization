@@ -44,7 +44,15 @@ The effect of the keyword volatile is that it makes sure the variable is stored 
    - Static member functions have a class scope and they do not have access to the this pointer of the class. You could use a static member function to determine whether some objects of the class have been created or not.
    - The preferred method for transferring composite objects to a function is by a const reference. A const reference makes sure that the original object is not modified
    - A static member function cannot access any non-static data members or non-static member functions. A static member function is faster than a non-static member function because it does not need the 'this' pointer
++ Stack is freed when function returns 
++ Global or static variables are stored in static part of memory
++ The static data area is usually divided into three parts: one for constants that are never modified by the program, one for initialized variables that may be modified by the program, and one for uninitialized variables that may be modified by the program
 
++ Global variable has external linkage. In other files, same name refers to same location in memory
+Static global variables are private to the source file where they are defined and do not conflict with other variables in other source files which would have the same name.
+Both global, as well as static variables, have static initialization, which means that if you don't assign them a value, they will get initialized to 0 (common variables) or NULL (pointers).
++ Static local variables: Variables declared as static inside a function are statically allocated, thereby keeping their memory cell throughout all program execution, while also having the same scope of visibility as automatic local variables. Hence whatever values the function puts into its static local variables during one call will remain the same whenever the function is called again
++ The advantage of static data is that it can be initialized to desired values before the program starts. The disadvantage is that the memory space is occupied throughout the whole program execution. This makes data caching less efficient because the memory space cannot be reused for another purpose
 + A copy constructor may be called whenever an object is copied by assignment, as afunction parameter, or as a function return value. The copy constructor can be a time consumer if it involves allocation of memory or other resources -> Use a reference or pointer to the object instead of copying it
    
 + A template class can be used for implementing a compile-time polymorphism, which is more efficient than the runtime polymorphism that is obtained with virtual member functions
