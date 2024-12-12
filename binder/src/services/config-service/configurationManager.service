@@ -1,0 +1,22 @@
+[Unit]
+Description=Configuration Manager Service
+After=network.target applicationManager
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=20s
+#WatchdogSec=30s
+ExecStart=/usr/bin/ConfigurationManagerService
+TimeoutSec=10s
+#StartLimitInterval=480s
+#StartLimitBurst=3
+#StartLimitAction=reboot-force
+
+StandardOutput=file:/var/log/config-service.log
+StandardError=file:/var/log/config-service-error.log
+
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/binder_control.dir/binderfs.c.o -o binder_control 

@@ -1,0 +1,3 @@
+/home/worker/binder/src/servicemanager/CMakeFiles/service_manager.dir
+/home/worker/binder/src/servicemanager/CMakeFiles/edit_cache.dir
+/home/worker/binder/src/servicemanager/CMakeFiles/rebuild_cache.dir
