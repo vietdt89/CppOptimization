@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libliblog.so.1 -o libliblog.so.1.0 CMakeFiles/liblog.dir/log.cpp.o 

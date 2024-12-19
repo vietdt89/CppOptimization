@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libiapplication.so.1 -o libiapplication.so.1.0 CMakeFiles/iapplication.dir/IApplicationManagerService.cpp.o CMakeFiles/iapplication.dir/IApplicationManagerReceiver.cpp.o  -Wl,-rpath,/home/worker/binder/src/libs:/home/worker/binder/src/logging ../../../libs/libbinder.so -lpthread ../../../logging/libliblog.so.1.0 
